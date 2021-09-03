@@ -1,20 +1,14 @@
-.. Documentação Odoo Exemplo documentation master file, created by
-   sphinx-quickstart on Thu Sep  2 21:45:20 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Documentação Odoo
+=================
 
-Welcome to Documentação Odoo Exemplo's documentation!
-=====================================================
+Odoo é uma solução de gestão empresarial ERP completo, é um software de código aberto totalmente integrado e
+personalizável, com centenas de aplicações.
+
+Sessões
+-------
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   login/index
+   pos/pos
