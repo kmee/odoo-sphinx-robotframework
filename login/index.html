@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O Login no Odoo &#8212; kmee-odoo-doc 12.0.0.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ponto de Venda" href="../pos/pos.html" />
+    <link rel="prev" title="Documentação Odoo" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="o-login-no-odoo">
+<h1>O Login no Odoo<a class="headerlink" href="#o-login-no-odoo" title="Permalink to this headline">¶</a></h1>
+<p>O login no Odoo, deve ser feito através de login, geralmente email e senha. Através da URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>*** Settings ***
+
+Resource  ../odoo.robot
+
+*** Variables ***
+
+${BROWSER}  firefox
+
+*** Test Cases ***
+
+Capture a screenshot of Odoo
+    Open browser  ${ODOO_URL}/web/login  browser=${BROWSER}
+    Capture page screenshot  login.png
+
+Valid Login
+    Login
+    Capture page screenshot  main.png
+
+Main Menu
+     Wait Until Page Contains Element    //i[@class=&quot;fa fa-th-large&quot;]
+     Click Element    //i[@class=&quot;fa fa-th-large&quot;]
+     Capture page screenshot  main-menu.png
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../_images/login.png" src="../_images/login.png" />
+</div>
+<p>Após o login o usuário é redirecionado para a tela principal:</p>
+<div class="figure align-default">
+<img alt="../_images/main.png" src="../_images/main.png" />
+</div>
+<p>No canto superior direito é possível acessar todos os aplicativos:</p>
+<div class="figure align-default">
+<img alt="../_images/main-menu.png" src="../_images/main-menu.png" />
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">kmee-odoo-doc</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">O Login no Odoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pos/pos.html">Ponto de Venda</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">Documentação Odoo</a></li>
+      <li>Next: <a href="../pos/pos.html" title="next chapter">Ponto de Venda</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;KMEE INFORMATICA LTDA <contato@kmee.com.br>, Cliente <cliente@example.com>.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/login/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
