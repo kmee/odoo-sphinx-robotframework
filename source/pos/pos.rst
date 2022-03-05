@@ -23,16 +23,16 @@ O acesso ao ponto de venda pode ser feito através:
    *** Variables ***
 
    ${BROWSER}  firefox
+   ${menu_tgi}=	Set Variable
 
    *** Test Cases ***
 
    Com um login válido
        Login
 
-   Mudar para empresa Center Norte
-       Selecione o menu do canto superior direito	TGI
-       Selecione o submenu do canto superior direito	Center Norte
-       Sleep	2s
+   Validar empresa
+       ${menu_tgi}=	Run Keyword And Return Status	Element Should Be Visible	xpath=//ul[@class='o_menu_systray']/li/a[descendant::text()[normalize-space()='TGI']]
+       Run Keyword If	${menu_tgi}	Mudar para empresa Center Norte
 
    Acessar o POS
         Selecione o menu principal

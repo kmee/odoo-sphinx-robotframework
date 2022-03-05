@@ -302,6 +302,11 @@ Aguarde o Carregamento do POS
 Clicar botão login [Arguments]	${number}
 	Wait Until Page Contains Element xpath=//button[@data-action='${number}']
 
+Mudar para empresa Center Norte
+	Selecione o menu do canto superior direito	TGI
+	Selecione o submenu do canto superior direito	Center Norte
+	Sleep	2s
+
 Inserir login	[Arguments]	${login}
     Wait Until Page Contains Element	xpath=//div[@class='login']/img[@class='login__image']
     Sleep	1s
