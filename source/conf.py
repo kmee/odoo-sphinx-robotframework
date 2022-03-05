@@ -26,7 +26,7 @@ sphinxcontrib_robotframework_variables = {
     'ODOO_URL': SERVER + ":" + PORT,
     'ODOO_DB': None,
     'ODOO_USER': "admin",
-    'ODOO_PASSWORD': "admin",
+    'ODOO_PASSWORD': "3RbSz7QunvY8zpFm",
 }
 
 # The suffix of source filenames.

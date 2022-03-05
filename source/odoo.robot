@@ -85,6 +85,12 @@ Selecione o menu superior    [Arguments]    ${menu}
     Wait Until Page Contains Element	xpath=//body[contains(@class,'o_web_client o_chatter_position_normal')]
     Sleep    1s
 
+# checked: 8.0 ok
+Selecione o menu    [Arguments]    ${menu}
+    Click Link				xpath=//ul[@class='o_menu_sections']/li[@class='show']/div/a[descendant::text()[normalize-space()='${menu}']]
+    Wait Until Page Contains Element	xpath=//body[contains(@class,'o_web_client o_chatter_position_normal')]
+    Sleep    1s
+
 SubMenuXMLid    [Arguments]		${Name}
     ${MODULE}=              Fetch From Left            ${Name}              .
     ${NAME}=                Fetch From Right           ${Name}              .
@@ -132,10 +138,14 @@ Button                      [Arguments]     ${model}    ${button_name}
      ElementPostCheck
 # checked: 8.0 ok
 Selecione o registro    [Arguments]    ${field}    ${value}
-    ElementPreCheck	    xpath=//div[contains(@class,'openerp')][last()]//input[@data-bt-testing-name='${field}']
-    Input Text		    xpath=//div[contains(@class,'openerp')][last()]//input[@data-bt-testing-name='${field}']    ${value}
+    ElementPreCheck	    xpath=//div[contains(@class,'o_main')][last()]//input[@data-bt-testing-name='${field}']
+    Input Text		    xpath=//div[contains(@class,'o_main')][last()]//input[@data-bt-testing-name='${field}']    ${value}
     Click Link             xpath=//ul[contains(@class,'ui-autocomplete') and not(contains(@style,'display: none'))]/li[1]/a
-    Textfield Should Contain    xpath=//div[contains(@class,'openerp')][last()]//input[@data-bt-testing-name='${field}']    ${value}
+    Textfield Should Contain    xpath=//div[contains(@class,'o_main')][last()]//input[@data-bt-testing-name='${field}']    ${value}
+    ElementPostCheck
+
+Selecione o registro na tela    [Arguments]    ${value}
+    Click Link             xpath=//div[@class='o_view_controller']//tbody/tr[2]
     ElementPostCheck
 
 Date    [Arguments]    ${field}    ${value}
@@ -277,6 +287,16 @@ Ativar o Botão
 
 Aguarde o Carregamento do POS
     Wait Until Page Contains Element	xpath=//body[not(contains(@class,'wait'))]  2 min
+
+Clicar botão login [Arguments]	${number}
+	Wait Until Page Contains Element xpath=//button[@data-action='${number}']
+
+Inserir login	[Arguments]	${login}
+    Wait Until Page Contains Element	xpath=//div[@class='login']/img[@class='login__image']
+    Sleep	1s
+    Click Element		xpath=//div[@class='login']//img[@class='login__image']
+    Click Button		xpath=//button[@data-action='3']
+    ElementPostCheck
 
 Selecione a mesa
     [Arguments]    ${name}

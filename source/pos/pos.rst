@@ -44,6 +44,11 @@ O acesso ao ponto de venda pode ser feito através:
         Sleep    1s
         Capture page screenshot  pos-loading-iot.png
 
+    Fazer login no Pos
+        Sleep    3s
+        Capture page screenshot  pos-login-loaded.png
+        Inserir login	3
+
     Abrindo uma mesa
         Sleep    3s
         Capture page screenshot  pos-loaded.png
