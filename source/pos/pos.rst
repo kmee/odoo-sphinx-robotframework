@@ -52,7 +52,7 @@ O acesso ao ponto de venda pode ser feito através:
     Fazer login no Pos
         Sleep    3s
         Capture page screenshot  pos-login-loaded.png
-        Clicar botão login	4
+        Inserir login
 
     Abrindo uma mesa
         Sleep    3s

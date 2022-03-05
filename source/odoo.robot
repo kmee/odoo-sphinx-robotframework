@@ -10,6 +10,11 @@ Library     XvfbRobot
 Library     SeleniumScreenshots
 ## DOC: https://marketsquare.github.io/robotframework-seleniumscreenshots/
 
+*** Variables ***
+@{admin_password}	3	0	6	6	9	8	7
+@{manager_password}	4	1	0	6	1	4	2	0	3	5
+@{waiter_password}	1	0	2	3	2
+@{cashier_password}	7	5	3	1	5	9	9	6	8	5
 
 *** Keywords ***
 
@@ -307,12 +312,19 @@ Mudar para empresa Center Norte
 	Selecione o submenu do canto superior direito	Center Norte
 	Sleep	2s
 
-Inserir login	[Arguments]	${login}
+Inserir login	[Arguments]
     Wait Until Page Contains Element	xpath=//div[@class='login']/img[@class='login__image']
-    Sleep	1s
+    Sleep	5s
     Click Element		xpath=//div[@class='login']//img[@class='login__image']
-    Clicar botão login	3
+    Sleep	1s
+	FOR    ${var}    IN  @{admin_password}
+		Click Element		//div[@class="popup popup-number popup-password"]//button[@data-action=${var}]
+	END
+	Click Element		//div[@class="popup popup-number popup-password"]//div[@class="button confirm"]
     ElementPostCheck
+
+#Logar Admin	[Arguments]
+#	Inserir login	${admin_password}
 
 Selecione a mesa
     [Arguments]    ${name}
