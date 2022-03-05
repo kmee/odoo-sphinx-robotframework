@@ -23,7 +23,6 @@ O acesso ao ponto de venda pode ser feito através:
    *** Variables ***
 
    ${BROWSER}  firefox
-   ${menu_tgi}=	Set Variable
 
    *** Test Cases ***
 
