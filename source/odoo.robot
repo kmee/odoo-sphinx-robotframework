@@ -84,6 +84,17 @@ Selecione o menu superior    [Arguments]    ${menu}
     Click Link				xpath=//ul[@class='o_menu_sections']/li/a[descendant::text()[normalize-space()='${menu}']]
     Wait Until Page Contains Element	xpath=//body[contains(@class,'o_web_client o_chatter_position_normal')]
     Sleep    1s
+# checked: 8.0 ok
+Selecione o menu do canto superior direito    [Arguments]    ${menu}
+    Click Link				xpath=//ul[@class='o_menu_systray']/li/a[descendant::text()[normalize-space()='${menu}']]
+    Wait Until Page Contains Element	xpath=//body[contains(@class,'o_web_client o_chatter_position_normal')]
+    Sleep    1s
+
+# checked: 8.0 ok
+Selecione o submenu do canto superior direito    [Arguments]    ${menu}
+    Click Link				xpath=//ul[@class='o_menu_systray']/li[contains(@class, 'show')]/div[contains(@class, 'show')]/a[contains(text(),'${menu}')]
+    Wait Until Page Contains Element	xpath=//body[contains(@class,'o_web_client o_chatter_position_normal')]
+    Sleep    1s
 
 # checked: 8.0 ok
 Selecione o menu    [Arguments]    ${menu}
@@ -295,7 +306,7 @@ Inserir login	[Arguments]	${login}
     Wait Until Page Contains Element	xpath=//div[@class='login']/img[@class='login__image']
     Sleep	1s
     Click Element		xpath=//div[@class='login']//img[@class='login__image']
-    Click Button		xpath=//button[@data-action='3']
+    Clicar botão login	3
     ElementPostCheck
 
 Selecione a mesa

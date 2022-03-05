@@ -29,6 +29,11 @@ O acesso ao ponto de venda pode ser feito através:
    Com um login válido
        Login
 
+   Mudar para empresa Center Norte
+       Selecione o menu do canto superior direito	TGI
+       Selecione o submenu do canto superior direito	Center Norte
+       Sleep	2s
+
    Acessar o POS
         Selecione o menu principal
         Selecione o aplicativo          Point of Sale
@@ -47,7 +52,7 @@ O acesso ao ponto de venda pode ser feito através:
     Fazer login no Pos
         Sleep    3s
         Capture page screenshot  pos-login-loaded.png
-        Inserir login	3
+        Clicar botão login	4
 
     Abrindo uma mesa
         Sleep    3s
